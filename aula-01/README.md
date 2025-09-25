@@ -115,10 +115,16 @@ O *mobile fist* é uma abordagem de design e desenvolvimento de sites e aplicati
     - URLs amigáveis
     - Velocidade
 
+
 ---
-## 📋 - Ambiente de desenvolvimento
-![Ambiente de desenvolvimento](image-2.png)
-
-
 ## 🧑‍💻 - Prática
-![Prática](image-3.png)
+Com base no modelo criando anteriormente para o site, avalie agora uma nova concepção tendo a ideia de modelar primeiro para mobiles.
+1) Reestruture o site pensando em criar primeiro para celular;
+2) Reestruture o site pensando em acesso via tablet;
+3) Reestruture o site pensando em acesso via computador ou notebook.
+
+### Modelo de divisão folha A4 para a modelagem
+1) Para smartphone e tablet, usar o modelo abaixo como padrão
+![Modelagem A4](image-4.png)
+
+2) Para tela do computador/notebook usar a folha A4 inteira como padrão.
