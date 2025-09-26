@@ -102,7 +102,16 @@ Use quando você quer mostrar imagens diferentes em telas diferentes (ex: um pla
  - O navegador avalia cada tag `<source>` de cima para baixo e usa a primeira que corresponder à media query. A tag `<img>` no final é obrigatória como fallback.
 
 ### Exercício Prático:
-1. Adicione a meta tag `viewport` ao seu arquivo `index.html`.
-2. Baixe 3 versões de uma mesma imagem em tamanhos diferentes (ex: 400px, 800px, 1200px de largura).
-3. Implemente a imagem no seu artigo usando a tag `<img>` com o atributo srcset.
-4. Baixe duas imagens diferentes (uma paisagem e um retrato). Implemente-as usando a tag `<picture>` para que a imagem retrato apareça em telas de até 600px e a paisagem em telas maiores.
+-> Implementar ambiente de desenvolvimento:
+1) Instale o Visual Studio Code, Git e o Google Chrome
+2) No VS Code, as extenções `Live Server` e `Prettier`
+3) Crie uma conta no **GitHub**
+4) Crie um novo repositório chamado `desenvolvimento-mobile-tds-uc15`
+5) Clone o repositório para a máquina local
+6) Dentro do repositório, crie um arquivo `index.html` com a estrutura básica de um documento HTML
+
+-> Seguindo o desenvolvimento
+1) Adicione a meta tag `viewport` ao seu arquivo `index.html`.
+2) Baixe 3 versões de uma mesma imagem em tamanhos diferentes (ex: 400px, 800px, 1200px de largura).
+3) Implemente a imagem no seu artigo usando a tag `<img>` com o atributo srcset.
+4) Baixe duas imagens diferentes (uma paisagem e um retrato). Implemente-as usando a tag `<picture>` para que a imagem retrato apareça em telas de até 600px e a paisagem em telas maiores.
