@@ -1,8 +1,13 @@
-# 🎨 Aula 02
+# 🎨 - Aula 02
 
 ## 🎯 Objetivos
+ - Montagem do ambiente de desenvolvimento
+ - Entendimento da web semantica
+ - VIEWPORT
+ - Imagens Responsivas
 
-## 🌍 Web Semantica
+---
+## 🌍 - Web Semantica
 Semântica é o estudo do significado. Em HTML, isso significa usar tags que descrevem o significado do conteúdo, e não apenas sua aparência.
 
 **Não Semântico:** `<div>` e `<span>`. Eles não dizem nada sobre seu conteúdo.
@@ -56,7 +61,7 @@ Depois - Semântico
     - Um rodapé com informações de contato e copyright.
 
 ---
-## 🧩 A Viewport e Imagens Responsivas
+## 🧩 - A Viewport e Imagens Responsivas
 A versão da formiga: \
 Sem uma instrução específica, os navegadores mobile tentam renderizar a página com a largura de um desktop (geralmente ~980px) e depois diminuem o resultado para caber na tela. O resultado é um texto minúsculo e ilegível.
 
@@ -69,7 +74,7 @@ Esta linha de código, inserida no `<head>` do seu HTML, é a instrução mais i
 - `initial-scale=1.0`: Controla o nível de zoom inicial. `1.0` impede que a página comece com zoom para mais ou para menos.
 
 ---
-## ✏️ Desafio das imagens
+## ✏️ - Desafio das imagens
 Enviar uma imagem de alta resolução (ex: 1920px de largura) para um celular com tela de 360px de largura é um desperdício de dados e torna o site lento. Precisamos enviar a imagem certa para o dispositivo certo. \
 **Soluções:** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`srcset`: Para diferentes resoluções. \
@@ -101,7 +106,8 @@ Use quando você quer mostrar imagens diferentes em telas diferentes (ex: um pla
 
  - O navegador avalia cada tag `<source>` de cima para baixo e usa a primeira que corresponder à media query. A tag `<img>` no final é obrigatória como fallback.
 
-### Exercício Prático:
+---
+## - Exercício Prático:
 -> Implementar ambiente de desenvolvimento:
 1) Instale o Visual Studio Code, Git e o Google Chrome
 2) No VS Code, as extenções `Live Server` e `Prettier`
