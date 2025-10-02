@@ -161,3 +161,6 @@ table {
     <link rel="stylesheet" href="reset.css">
     <!-- Codigo omitido -->
 ```
+
+## Exercício
+1) Com base no exemplo que se encontra na pasta [code]()
