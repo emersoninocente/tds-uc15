@@ -23,6 +23,8 @@ Semântica é o estudo do significado. Em HTML, isso significa usar tags que des
 - `<aside>`: Conteúdo secundário, relacionado ao conteúdo principal (ex: uma barra lateral).
 - `<footer>`: O rodapé da página (informações de copyright, links, etc).
 
+> Para saber um pouco mais sobre [web semântica](https://www.freecodecamp.org/portuguese/news/elementos-semanticos-do-html5-explicados/) e mais [ainda](https://www.devmedia.com.br/html-semantico-conheca-os-elementos-semanticos-da-html5/38065).
+
 ### 🛠️ Exemplo prático: Antes e Depois
 
 Antes - Não semântico

@@ -163,4 +163,4 @@ table {
 ```
 
 ## Exercício
-1) Com base no exemplo que se encontra na pasta [code]()
+1) Com base na demo que se encontra na pasta [code](https://github.com/emersoninocente/tds-uc15/tree/main/aula-03/code). Separe todo o conteúdo referente ao estilo, criando um arquivo de estilo `.css` e importe no `HTML`. Faça a mesma coisa para o `javascript` criando um arquivo `.js`
