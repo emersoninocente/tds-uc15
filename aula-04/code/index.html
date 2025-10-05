@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial UC-15</title>
+  </head>
+  <body>
+    <header>
+      Conteúdo do cabeçalho    
+      <nav class="nav" id="nav">
+        <button id="btn-mobile" class="btn-hamburger" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-list" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        
+        <ul id="menu-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      Aqui conteúdo principal
+      <picture>
+        <source media="(max-width: 600px)" srcset="./img/img-pequena.png">
+        <source media="(max-width: 1024px)" srcset="./img/img-media.png">
+        <img src="./img/img-grande.png" alt="Imagem">
+      </picture>
+    </main>
+
+    <footer>
+      Rodapé
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+/* === ESTILOS GERAIS === */
+img {
+	max-width: 50%;
+	height: auto;
+	display: block;
+}
+
+picture {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+main {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: red;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-bottom: 0px;
+}
+
+footer {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: chocolate;
+	padding-left: 2px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.nav {
+  display: flex; /* Alinha o botão e o menu */
+  justify-content: flex-end; /* Empurra o conteúdo para a direita */
+  align-items: center;
+  /* padding: 1rem; */
+}
+
+/* === ESTILOS MOBILE FIRST (Padrão) === */
+
+/* Estilo do botão Hamburger */
+.btn-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaço entre as linhas */
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: .3s ease-in-out;
+}
+
+/* Esconde a lista do menu por padrão no mobile */
+#menu-list {
+  display: none; /* Começa escondido */
+  position: absolute;
+  width: 100%;
+  top: 90px; /* Ajuste conforme a altura do seu header/nav */
+  right: 0px;
+  background-color: #f9f9f9;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-list li {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+#menu-list li:last-child {
+  border-bottom: none;
+}
+
+#menu-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Classe que será adicionada/removida via JS */
+#nav.active #menu-list {
+  display: block; /* Mostra o menu quando a nav tiver a classe .active */
+}
+
+/* Animação do botão para virar um "X" */
+#nav.active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+#nav.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+#nav.active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+
+/* === ESTILOS PARA TELAS MAIORES (TABLET/DESKTOP) === */
+
+@media (min-width: 768px) {
+  /* Esconde o botão hamburger */
+  .btn-hamburger {
+    display: none;
+  }
+  
+  /* Mostra a lista e a formata na horizontal */
+  #menu-list {
+    display: flex;
+    position: static; /* Remove o posicionamento absoluto */
+    width: auto; /* Largura automática */
+    background-color: transparent; /* Remove o fundo */
+  }
+
+  #menu-list li {
+    border: none;
+    padding: 0 1rem; /* Espaçamento horizontal */
+  }
+}
