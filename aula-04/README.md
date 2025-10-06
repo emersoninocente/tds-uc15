@@ -1,15 +1,15 @@
-# Aula 04
+# 🚀 - Aula 04
 
-## Objetivos
+## 🎯 - Objetivos
 
 - Revisão dos conteúdos
 - Uso do `header`
 
 ---
 
-## Revisando nosso código
+## ✅ - Revisando nosso código
 
-### Tags básicas
+### 📝 - Tags básicas
 
 `DOCTYPE`
 `html`
@@ -19,17 +19,17 @@
 `viewport`
 `charset`
 
-### Integração HTML e CSS
+### 🛂 - Integração HTML e CSS
 
 `link`
 
-### Integração Javascript
+### 🏗️ - Integração Javascript
 
 `script`
 
-### Juntando tudo
+### ⚙️ - Juntando tudo
 
-#### Exemplo
+#### 📦 - Exemplo
 
 `index.html`
 
@@ -63,7 +63,7 @@ body {
 
 ---
 
-## Montando o cabeçalho da página
+## 🧩 - Montando o cabeçalho da página
 
 > Para montarmos o `header` da nossa página, vamos iniciar criando o **menu** do tipo **hamburger** para isto vamos precisar criar um `button` e dentro deste vamos colocar três `span` para montarmos as linhas. Vamos ajustar o estilo no nosso `css` e as ações usando javascript. Então vamos as modificações:
 
@@ -228,9 +228,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 ```
-## Outros modelos de "Menu"
+## 🧮 - Outros modelos de "Menu"
 
-### Principal
+### 🗃️ - Principal
 Estes são os menus que guiam o usuário pela estrutura principal do site.
 
 1) **Barra de Navegação Horizontal (Navbar)** \
@@ -254,7 +254,7 @@ Estes são os menus que guiam o usuário pela estrutura principal do site.
    - **Ideal para:** Sites com forte apelo visual e minimalista, como portfólios, agências de design ou sites de marcas de luxo. Cria uma experiência imersiva e focada.
    - **Pontos de Atenção:** É uma ação mais disruptiva para o usuário, pois esconde completamente o contexto da página em que ele estava.
 
-### Secundários
+### 🔄 - Secundários
 Estes menus complementam a navegação principal ou oferecem opções específicas para o conteúdo da página.
 
 1) **Menu de Abas (Tabbed Navigation)**
@@ -271,7 +271,7 @@ Exemplo: *Home > Eletrônicos > Smartphones > Marca X*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;São menus representados por três pontos (verticais ou horizontais) que revelam um pequeno conjunto de ações contextuais, não de navegação principal.
    - **Ideal para:** Listas de itens onde cada item tem suas próprias opções (Ex: em um card do Trello, um e-mail na caixa de entrada, uma postagem em rede social). As ações são "Editar", "Excluir", "Compartilhar", etc.
 
-### Padrões Criativos e Específicos
+### 📌 - Padrões Criativos e Específicos
 
 1) **Navegação por Pontos (Dot Navigation)**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma série de pontos na lateral da tela, comum em sites de página única (one-pagers). Cada ponto representa uma seção da página e, ao ser clicado, rola a tela suavemente até aquela seção.
