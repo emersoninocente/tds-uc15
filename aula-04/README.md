@@ -228,3 +228,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 ```
+## Outros modelos de "Menu"
+
+### Principal
+Estes são os menus que guiam o usuário pela estrutura principal do site.
+
+1) **Barra de Navegação Horizontal (Navbar)** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;É o padrão mais clássico e reconhecível. Uma barra no topo da página com os links principais lado a lado.
+   - **Ideal para:** Sites com poucas seções principais (entre 4 a 7 itens). É direto e os usuários já estão totalmente familiarizados com ele.
+   - **Pontos de Atenção:** Se torna problemático com muitos itens, pois quebra a linha ou sobrecarrega o visual. Em telas menores, ele precisa ser substituído por um menu hamburger ou similar.
+   - **Variação Comum:** Navbar com Dropdowns, onde um item de menu revela um submenu ao passar o mouse ou clicar.
+
+2) **Barra de Navegação Vertical (Sidebar)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um menu fixo ou rolável na lateral da página (geralmente à esquerda).
+   - **Ideal para:** Aplicações web (dashboards, painéis de controle), documentações ou sites com muitas categorias de mesmo nível hierárquico. Permite exibir uma longa lista de links sem poluir o topo da página.
+   - **Pontos de Atenção:** Ocupa um espaço lateral valioso, o que pode reduzir a área de conteúdo principal. Em telas mobile, a sidebar geralmente se esconde e é acionada por um botão (semelhante ao hamburger), transformando-se em um menu off-canvas.
+
+3) **Menu "Mega" (Mega Menu)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma evolução do dropdown. Ao interagir com um item do menu horizontal, um painel gigante se abre, exibindo links em múltiplas colunas, muitas vezes com ícones e até imagens.
+   - **Ideal para:** Grandes portais de e-commerce (ex: Amazon, Magazine Luiza) e sites de notícias com muitas subcategorias. Ajuda o usuário a visualizar toda a estrutura do site de uma vez.
+   - **Pontos de Atenção:** Requer uma tela grande para ser eficaz e pode ser complexo de implementar de forma responsiva.
+
+4) **Menu de Tela Cheia (Fullscreen Overlay)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quando o usuário clica em um ícone (geralmente um hamburger ou a palavra "Menu"), a navegação toma conta da tela inteira, sobrepondo o conteúdo.
+   - **Ideal para:** Sites com forte apelo visual e minimalista, como portfólios, agências de design ou sites de marcas de luxo. Cria uma experiência imersiva e focada.
+   - **Pontos de Atenção:** É uma ação mais disruptiva para o usuário, pois esconde completamente o contexto da página em que ele estava.
+
+### Secundários
+Estes menus complementam a navegação principal ou oferecem opções específicas para o conteúdo da página.
+
+1) **Menu de Abas (Tabbed Navigation)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usado para organizar conteúdos diferentes dentro da mesma página. O usuário clica em uma aba para alternar a visualização do conteúdo sem recarregar a página.
+   - **Ideal para:** Páginas de produto (com abas para "Descrição", "Especificações", "Avaliações"), perfis de usuário, etc.
+   - **Pontos de Atenção:** Não funciona bem para muitos itens. No mobile, as abas podem se transformar em um menu dropdown ou em uma lista rolável horizontalmente.
+
+2) **Breadcrumbs (Navegação Estrutural)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;É um "rastro" de links que mostra ao usuário onde ele está na hierarquia do site e permite que ele volte facilmente para as páginas anteriores. \
+Exemplo: *Home > Eletrônicos > Smartphones > Marca X*
+   - **Ideal para:** Sites com estrutura profunda e muitas subpáginas, como e-commerce, fóruns e documentações. Essencial para a usabilidade em sites complexos.
+
+3) **Menu "Kebab" (⋮) e "Meatballs" (…)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;São menus representados por três pontos (verticais ou horizontais) que revelam um pequeno conjunto de ações contextuais, não de navegação principal.
+   - **Ideal para:** Listas de itens onde cada item tem suas próprias opções (Ex: em um card do Trello, um e-mail na caixa de entrada, uma postagem em rede social). As ações são "Editar", "Excluir", "Compartilhar", etc.
+
+### Padrões Criativos e Específicos
+
+1) **Navegação por Pontos (Dot Navigation)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma série de pontos na lateral da tela, comum em sites de página única (one-pagers). Cada ponto representa uma seção da página e, ao ser clicado, rola a tela suavemente até aquela seção.
+   - **Ideal para:** Landing pages, sites de apresentação de produtos, portfólios lineares.
+
+2) **Menu Circular ou Radial**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Os itens de menu são dispostos em um círculo ou arco ao redor de um ponto central. É ativado por um clique.
+   - **Ideal para:** Sites que querem uma experiência altamente interativa e visual. Pode funcionar bem quando há poucas opções.
+   - **Pontos de Atenção:** Pode ser um desafio para a usabilidade e acessibilidade se não for implementado com muito cuidado. Não é um padrão comum, então pode confundir alguns usuários.
