@@ -708,7 +708,7 @@ img {
 **Objetivo:** Praticar diferentes unidades de medida.
 
 **Desafio:** Crie uma página com:
-- Um hero section com 100vh de altura
+- Um [hero](https://www.dreamhost.com/blog/pt/design-do-heroi-da-pagina-inicial/) section com 100vh de altura
 - Título com tamanho em rem
 - Parágrafo com tamanho em em
 - Container com largura em %
