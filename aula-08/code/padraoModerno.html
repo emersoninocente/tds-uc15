@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Hambúrguer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    /* Header */
+    .header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    /* Hamburger Button */
+    .hamburger {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1001;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: all 0.3s;
+      border-radius: 3px;
+    }
+    
+    /* Animated hamburger to X */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Mobile Menu */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 400px;
+      height: 100vh;
+      background: #fff;
+      padding: 5rem 2rem 2rem;
+      transition: left 0.3s;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      z-index: 999;
+    }
+    
+    .nav-menu.active {
+      left: 0;
+    }
+    
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 998;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Menu Items */
+    .nav-list {
+      list-style: none;
+    }
+    
+    .nav-list li {
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav-list a {
+      display: block;
+      padding: 1rem 0;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.125rem;
+      transition: color 0.3s;
+    }
+    
+    .nav-list a:hover {
+      color: #007bff;
+    }
+    
+    /* Submenu */
+    .nav-list .submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s;
+      padding-left: 1rem;
+    }
+    
+    .nav-list .submenu.active {
+      max-height: 500px;
+    }
+    
+    .nav-list .submenu a {
+      font-size: 1rem;
+      padding: 0.75rem 0;
+    }
+    
+    .has-submenu > a::after {
+      content: ' ▼';
+      font-size: 0.75rem;
+      float: right;
+    }
+    
+    /* Desktop */
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+        max-width: none;
+      }
+      
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+      }
+      
+      .nav-list li {
+        border: none;
+      }
+      
+      .nav-list a {
+        color: white;
+        padding: 0;
+      }
+      
+      .overlay {
+        display: none;
+      }
+    }
+    
+    /* Content */
+    main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">MeuSite</div>
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li class="has-submenu">
+            <a href="#servicos" onclick="toggleSubmenu(event)">Serviços</a>
+            <ul class="submenu">
+              <li><a href="#web">Web Design</a></li>
+              <li><a href="#app">Apps</a></li>
+              <li><a href="#seo">SEO</a></li>
+            </ul>
+          </li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="overlay" id="overlay"></div>
+  
+  <main>
+    <h1>Menu Hambúrguer Responsivo</h1>
+    <p>Redimensione a janela para ver o menu se adaptar.</p>
+    <p>No mobile, clique no ícone hambúrguer para abrir o menu lateral.</p>
+  </main>
+  
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+    
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      
+      const isExpanded = hamburger.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+      
+      // Previne scroll do body quando menu aberto
+      if (isExpanded) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = '';
+      }
+    }
+    
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    
+    // Fecha menu ao pressionar ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+    
+    // Submenu toggle
+    function toggleSubmenu(e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        const submenu = e.target.nextElementSibling;
+        submenu.classList.toggle('active');
+      }
+    }
+  </script>
+</body>
+</html>
