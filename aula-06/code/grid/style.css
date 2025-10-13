@@ -1,0 +1,82 @@
+/* style.css 
+ * Estilos para mobile first tela 428x926
+ * GRID LAYOUT
+ */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+main {
+  background: linear-gradient(135deg, red 0%, #764ba2 100%);
+  color: white;
+  margin: 0.1rem;
+}
+
+section {
+  background: linear-gradient(135deg, orange 0%, #764ba2 100%);
+  color: white;
+  margin: 0.1rem;
+}
+
+article {
+  background: linear-gradient(135deg, yellow 0%, #764ba2 100%);
+  color: white;
+  margin: 0.1rem;
+}
+
+aside {
+  background: linear-gradient(135deg, green 0%, #764ba2 100%);
+  color: white;
+}
+
+footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  /* tablet 768x1024 */
+  main {
+    float: left;
+    width: 70%;
+  }
+
+  section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
+  }
+
+  aside {
+    float: right;
+    width: 28%;
+    height: 100%;
+  }
+
+  footer {
+    clear: both;
+}
+
+@media screen and (min-width: 1024px) {
+  /* desktop 1024x768 */
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.1rem;
+  }
+}
