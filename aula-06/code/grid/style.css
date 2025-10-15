@@ -1,82 +1,112 @@
+/* CSS para Mobile First */
 /* style.css 
  * Estilos para mobile first tela 428x926
  * GRID LAYOUT
  */
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+body {
+	font-size: 12px;
 }
 
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+	background: blue;
+	color: white;
+	display: block;
+	min-height: 1.5rem;
 }
 
 nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+	float: right;
+	padding-left: 0.8rem;
 }
 
 main {
-  background: linear-gradient(135deg, red 0%, #764ba2 100%);
-  color: white;
-  margin: 0.1rem;
+	background: yellow;
+	display: grid;
+	grid-template-columns: 1fr;
 }
 
 section {
-  background: linear-gradient(135deg, orange 0%, #764ba2 100%);
-  color: white;
-  margin: 0.1rem;
+	background: orange;
+	color: white;
+	margin: 0.2rem;
 }
 
 article {
-  background: linear-gradient(135deg, yellow 0%, #764ba2 100%);
-  color: white;
-  margin: 0.1rem;
+	background: chartreuse;
+	color: blue;
+	margin: 0.2rem;
+	min-height: 4rem;
 }
 
 aside {
-  background: linear-gradient(135deg, green 0%, #764ba2 100%);
-  color: white;
+	background: red;
+	min-height: 2rem;
 }
 
 footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+	background: green;
+	min-width: 1rem;
+}
+
+.rodape-box {
+	background: rebeccapurple;
+	margin: 0.1rem;
+	min-width: 32%;
 }
 
 @media screen and (min-width: 768px) {
-  /* tablet 768x1024 */
-  main {
-    float: left;
-    width: 70%;
-  }
+	/* Modificações para Tablet */
+	body {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+	}
+	header {
+		grid-column-start: 1;
+		grid-column-end: 7;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
 
-  section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem;
-  }
+	aside {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 6;
+	}
 
-  aside {
-    float: right;
-    width: 28%;
-    height: 100%;
-  }
+	main {
+		grid-column-start: 3;
+		grid-column-end: 7;
+		grid-row-start: 2;
+		grid-row-end: 6;
+	}
 
-  footer {
-    clear: both;
+	footer {
+		grid-column-start: 1;
+		grid-column-end: 7;
+		grid-row-start: 6;
+		grid-row-end: 7;
+	}
 }
 
 @media screen and (min-width: 1024px) {
-  /* desktop 1024x768 */
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.1rem;
-  }
+	/* Modificações para Desktop */
+	body {
+		font-size: 16px;
+	}
+	main {
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: 2;
+		grid-row-end: 6;
+	}
+
+	aside {
+		grid-column-start: 5;
+		grid-column-end: 7;
+		grid-row-start: 2;
+		grid-row-end: 6;
+		background: black;
+	}
 }
