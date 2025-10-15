@@ -35,8 +35,8 @@
 - **Benefícios:** Isso diminui o tempo necessário para baixar os recursos do site, melhorando a velocidade de carregamento.
 
 #### 1.2.2 Formato da imagem
-- **O que é:**Atualmente, existem mais de 10 formatos de imagem que podem ser usados. JPEG, PNG, GIFF, etc.
-- **Como implementar:**Utilize ferramentas para alterar o tipo de formato da imagem. Use preferencialmente **WebP** (.webp).
+- **O que é:** Atualmente, existem mais de 10 formatos de imagem que podem ser usados. JPEG, PNG, GIFF, etc.
+- **Como implementar:** Utilize ferramentas para alterar o tipo de formato da imagem. Use preferencialmente **WebP** (.webp).
 - **Benefícios:** Melhor tempo de carregamento, menor perda de qualidade.
 
 #### 1.2.3 Lazy Loading
