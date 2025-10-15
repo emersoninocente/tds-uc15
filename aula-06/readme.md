@@ -23,6 +23,7 @@
 - **Flexbox Froggy:** https://flexboxfroggy.com/ (jogo para aprender flexbox)
 - **Flexbox Defense:** http://www.flexboxdefense.com/ (jogo tower defense)
 - **Flexbox Zombies:** https://mastery.games/flexboxzombies/
+- **Grid Garden:** https://cssgridgarden.com/
 
 ### Leitura Obrigatória
 - CSS-Tricks - "A Complete Guide to Flexbox"
@@ -35,5 +36,7 @@
 ### Ferramentas
 - **Flexbox Generator:** https://loading.io/flexbox/
 - **Flexy Boxes:** https://the-echoplex.net/flexyboxes/
+- **Grid Generator:** https://cssgridgenerator.io/
+- **Code Pen:** https://grid.layoutit.com/
 
 ---
