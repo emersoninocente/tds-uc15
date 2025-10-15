@@ -52,7 +52,7 @@
 ### 🧪 Exercício 1: Compressão e comparação
 - Objetivo: Demonstrar o impacto da compressão
    - Pegue uma imagem de 1MB
-   - Comprime usando TinyPNG ou Squoosh
+   - Comprime usando [TinyPNG](https://tinypng.com/) ou [Squoosh](https://squoosh.app/)
    - Compare os tempos de carregamento em uma página simples antes e depois
 
 ### 🧪 Exercício 2: Implementação de srcset
