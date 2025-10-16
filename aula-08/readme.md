@@ -1,11 +1,11 @@
-# Aula 08 - Navegação mobile
+# 📱 Aula 08 - Navegação mobile
 
-## Objetivo
+## 🎯 Objetivo
 - Dominar padrões de navegação mobile, incluindo menu hambúrguer, bottom navigation e outros padrões modernos.
 
 ---
 
-## 1. Fundamentos de Navegação Mobile (45 min)
+## ✏️ 1. Fundamentos de Navegação Mobile (45 min)
 
 ### 1.1 Desafios da Navegação Mobile
 
@@ -48,7 +48,7 @@
 - Mostra itens principais
 - Esconde secundários em "mais"
 
-### 1.3 Thumb Zone (Zona do Polegar)
+### 💡 1.3 Thumb Zone (Zona do Polegar)
 
 ```
 ┌─────────────────┐
@@ -78,7 +78,7 @@
 - **Como Implementar:** Configure cabeçalhos HTTP de cache para especificar quais recursos devem ser armazenados em cache e por quanto tempo.
 - **Benefícios:** Isso melhora a velocidade de carregamento em visitas subsequentes.
 
-### 1.3 Interface do usuário
+### 🧑‍💻 1.3 Interface do usuário
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um dos pontos cruciais da interação com dispositivos móveis é a interface tátil. Nesse contexto, botões e links não são apenas elementos visuais; eles são a principal forma de interação. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Botões muito pequenos ou links muito próximos dificultam a usabilidade e podem levar a cliques acidentais, frustrando o usuário. Portanto, é crucial que botões e links sejam suficientemente grandes e bem espaçados para permitir uma interação fácil e precisa.
 
@@ -96,3 +96,26 @@
 - **Fonte:** Opte por uma tipografia clara e legível, com um tamanho mínimo de 16px para o texto do corpo.
 - **Espaçamento e Layout:** Utilize um sistema de grade para alinhar elementos consistentemente e empregar espaçamento adequado. Mantenha uma distância suficiente entre os elementos clicáveis para evitar cliques errôneos.
 - **Teste de Usabilidade:** Antes do lançamento, realize testes de usabilidade para verificar se os elementos da interface estão otimizados para interação em dispositivos móveis. Ferramentas como heatmaps podem ajudar a identificar áreas problemáticas.
+
+---
+## 📚 Os Exercícios Criados:
+### Exercício 1: Menu Hambúrguer Responsivo
+- Implementa o padrão de menu hambúrguer (☰)
+- Touch targets de 44x44px
+- Animação do hambúrguer virando X
+- Overlay escuro e transições suaves
+- Responsivo para desktop (menu horizontal)
+
+### Exercício 2: Bottom Navigation com Thumb Zone
+- Navegação inferior com 5 itens (máximo recomendado)
+- Posicionado na zona de fácil alcance do polegar
+- Indicador visual do item ativo
+- Ícones + labels para melhor compreensão
+- Feedback visual em todas as interações
+
+### Exercício 3: Interface com Toque Otimizado
+- Galeria de produtos com grade responsiva
+- Todos os botões com 44x44px mínimo
+- Fonte base de 16px (legível)
+- Espaçamento adequado entre elementos
+- Sistema de grade consistente (1, 2 ou 3 colunas)
