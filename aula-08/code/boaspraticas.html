@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Mobile First</title>
+    <style>
+        /* RESET E CONFIGURAÇÕES BÁSICAS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        /* HEADER - MOBILE FIRST */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        /* Navegação Desktop - escondida no mobile */
+        .nav-desktop {
+            display: none;
+            gap: 24px;
+        }
+
+        .nav-desktop a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-desktop a:hover {
+            color: #2563eb;
+        }
+
+        /* Botões de ação do header */
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Botões com touch target de 44x44px */
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            background-color: #f3f4f6;
+        }
+
+        .icon-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Badge do carrinho */
+        .cart-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Menu hambúrguer - visível apenas no mobile */
+        .menu-toggle {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 3px;
+            background-color: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Menu mobile dropdown */
+        .nav-mobile {
+            display: none;
+            border-top: 1px solid #e5e7eb;
+            background-color: white;
+        }
+
+        .nav-mobile.active {
+            display: block;
+        }
+
+        .nav-mobile a {
+            display: block;
+            padding: 16px;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #f9fafb;
+        }
+
+        /* HERO SECTION - MOBILE FIRST */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 48px 16px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            color: #bfdbfe;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Botões com touch target adequado */
+        .btn {
+            min-height: 44px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #2563eb;
+        }
+
+        /* CATEGORIAS - MOBILE FIRST */
+        .categories {
+            padding: 32px 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: #1f2937;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .category-card {
+            min-height: 88px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .category-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+        }
+
+        .category-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .category-card:hover .category-name {
+            color: #2563eb;
+        }
+
+        /* PRODUTOS - MOBILE FIRST */
+        .products {
+            padding: 32px 16px;
+            background-color: white;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .view-all {
+            min-height: 44px;
+            padding: 0 16px;
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .view-all:hover {
+            color: #1e40af;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: #f9fafb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .product-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #dbeafe 0%, #e9d5ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Botão de favorito - touch target 44x44px */
+        .favorite-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .favorite-btn:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+
+        .favorite-btn.active {
+            color: #ef4444;
+        }
+
+        .product-content {
+            padding: 16px;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+
+        .star.empty {
+            color: #d1d5db;
+        }
+
+        .rating-value {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-left: 4px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 16px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-buy {
+            flex: 1;
+            min-height: 44px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-buy:hover {
+            background-color: #1e40af;
+        }
+
+        .btn-cart {
+            min-width: 44px;
+            min-height: 44px;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            background-color: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn-cart:hover {
+            background-color: #eff6ff;
+        }
+
+        /* NEWSLETTER - MOBILE FIRST */
+        .newsletter {
+            padding: 48px 16px;
+            background-color: #f3f4f6;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+
+        .newsletter p {
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .newsletter-input {
+            min-height: 44px;
+            padding: 0 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .btn-newsletter {
+            min-height: 44px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-newsletter:hover {
+            background-color: #1e40af;
+        }
+
+        /* FOOTER - MOBILE FIRST */
+        footer {
+            background-color: #111827;
+            color: white;
+            padding: 32px 16px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .footer-section p {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            background-color: #1f2937;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: #374151;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 24px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        /* MEDIA QUERIES - TABLET */
+        @media (min-width: 640px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: row;
+            }
+
+            .newsletter-input {
+                flex: 1;
+            }
+
+            .btn-newsletter {
+                white-space: nowrap;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MEDIA QUERIES - DESKTOP */
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-desktop {
+                display: flex;
+            }
+
+            .hero {
+                padding: 80px 16px;
+                text-align: left;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">TechStore</div>
+
+            <!-- Navegação Desktop -->
+            <nav class="nav-desktop">
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <!-- Ações do Header -->
+            <div class="header-actions">
+                <!-- Botão de Busca - 44x44px -->
+                <button class="icon-btn" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+
+                <!-- Botão do Carrinho - 44x44px -->
+                <button class="icon-btn" aria-label="Carrinho">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">3</span>
+                </button>
+
+                <!-- Menu Hambúrguer - 44x44px -->
+                <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <h2>Promoção de Verão</h2>
+            <p>Até 50% OFF em produtos selecionados</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Ver Ofertas</button>
+                <button class="btn btn-secondary">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="categories">
+        <div class="container">
+            <h3 class="section-title">Categorias</h3>
+            <div class="categories-grid">
+                <button class="category-card">
+                    <span class="category-icon">💻</span>
+                    <span class="category-name">Eletrônicos</span>
+                </button>
+                <button class="category-card">
+                    <span class="category-icon">👔</span>
+                    <span class="category-name">Moda</span>
+                </button>
+                <button class="category-card">
+                    <span class="category-icon">⚽</span>
+                    <span class="category-name">Esportes</span>
+                </button>
+                <button class="category-card">
+                    <span class="category-icon">🏠</span>
+                    <span class="category-name">Casa</span>
+                </button>
+                <button class="category-card">
+                    <span class="category-icon">💄</span>
+                    <span class="category-name">Beleza</span>
+                </button>
+                <button class="category-card">
+                    <span class="category-icon">📚</span>
+                    <span class="category-name">Livros</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="products" id="produtos">
+        <div class="container">
+            <div class="products-header">
+                <h3 class="section-title">Produtos em Destaque</h3>
+                <a href="#" class="view-all">
+                    Ver Todos
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span>👟</span>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)" aria-label="Favoritar">
+                            ♡
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <h4 class="product-title">Tênis Esportivo</h4>
+                        <div class="product-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-value">(4.5)</span>
+                        </div>
+                        <div class="product-price">R$ 299,90</div>
+                        <div class="product-actions">
+                            <button class="btn-buy">Comprar</button>
+                            <button class="btn-cart" aria-label="Adicionar ao carrinho">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produto 6 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span>🕶️</span>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)" aria-label="Favoritar">
+                            ♡
+                        </button>
+                    </div>
+                    <div class="product-content">
+                        <h4 class="product-title">Óculos Solar</h4>
+                        <div class="product-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star empty">★</span>
+                            <span class="rating-value">(4.4)</span>
+                        </div>
+                        <div class="product-price">R$ 229,90</div>
+                        <div class="product-actions">
+                            <button class="btn-buy">Comprar</button>
+                            <button class="btn-cart" aria-label="Adicionar ao carrinho">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h3>Receba Nossas Ofertas</h3>
+            <p>Cadastre-se e ganhe 10% de desconto na primeira compra!</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Cadastro realizado!');">
+                <input 
+                    type="email" 
+                    class="newsletter-input" 
+                    placeholder="Seu melhor e-mail"
+                    required
+                >
+                <button type="submit" class="btn-newsletter">Inscrever-se</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <!-- Coluna 1 -->
+            <div class="footer-section">
+                <h4>TechStore</h4>
+                <p>Sua loja online de confiança para tecnologia e estilo de vida.</p>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="footer-section">
+                <h4>Ajuda</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envio</a></li>
+                    <li><a href="#">Devoluções</a></li>
+                    <li><a href="#">Rastreamento</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-buttons">
+                    <button class="social-btn" aria-label="Facebook">📘</button>
+                    <button class="social-btn" aria-label="Instagram">📷</button>
+                    <button class="social-btn" aria-label="Twitter">🐦</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 TechStore. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle do menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Toggle de favoritos
+        function toggleFavorite(button) {
+            if (button.textContent === '♡') {
+                button.textContent = '♥';
+                button.classList.add('active');
+            } else {
+                button.textContent = '♡';
+                button.classList.remove('active');
+            }
+        }
+
+        // Fechar menu ao clicar em um link (mobile)
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('mobileMenu');
+                const toggle = document.querySelector('.menu-toggle');
+                menu.classList.remove('active');
+                toggle.classList.remove('active');
+            });
+        });
+
+        // Feedback visual nos botões
+        document.querySelectorAll('.btn-buy').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Produto adicionado ao carrinho!');
+            });
+        });
+
+        document.querySelectorAll('.btn-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Produto adicionado ao carrinho!');
+            });
+        });
+    </script>
+</body>
+</html>
