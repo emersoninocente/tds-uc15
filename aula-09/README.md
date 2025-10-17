@@ -34,5 +34,12 @@
 > Para seguirmos com o processo desta disciplina usaremos o WordPress instalado em ambiente local.
 
 1) Executando download
-  - Acesso o link https://wordpress.org/download/ 
+  - Acesso o link https://wordpress.org/download/
+  - Descompactar arquivo
+  - Mover para wordpress para dentro da pasta htdocs
 2) Preparando a instalação
+  - Criar base de dados
+  - Criar usuário
+3) Acessar página de instalação
+  - http://localhost:8080/wordpress
+  - Seguir processo de instalação
