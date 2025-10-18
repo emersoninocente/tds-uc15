@@ -46,4 +46,14 @@
   - http://localhost:8080/wordpress
   - Seguir processo de instalação
 <img width="1173" height="784" alt="Página inicial da instalação do WordPress" src="https://github.com/user-attachments/assets/e6de3f87-882a-4c90-85d2-4672006fe99d" />
+<img width="767" height="462" alt="Informações necessárias" src="https://github.com/user-attachments/assets/1a0d1b98-f07b-4657-bdef-651df7a66c0f" />
+<img width="820" height="672" alt="Preenchimento dos dados" src="https://github.com/user-attachments/assets/0a77a9bd-edc8-45cc-ad27-a97dbad5d98e" />
+<img width="802" height="308" alt="Start do processo de instalação" src="https://github.com/user-attachments/assets/b721f031-6870-4401-838c-6ff3d3272b83" />
+<img width="774" height="915" alt="Criar conta inicial de acesso ao WP" src="https://github.com/user-attachments/assets/681750a3-a86c-409c-bcee-4574b19dab93" />
+<img width="788" height="448" alt="Final da instalação" src="https://github.com/user-attachments/assets/cfeb0588-742d-493e-bd19-bd854412040b" />
+
+
+
+
+
 
