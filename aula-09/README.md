@@ -33,12 +33,12 @@
 > Alguns CMS funcionam tanto na forma de hospedagem ou local. Existem possibilidade de uso em ambiente do próprio fornecedor, assim como em alguns fornecedores de hospedagem ou o processo de instalação em servidor local na empresa. \
 > Para seguirmos com o processo desta disciplina usaremos o WordPress instalado em ambiente local.
 
-1) Executando download
+**1) Executando download**
   - Acesso o link https://wordpress.org/download/
   - Descompactar arquivo
   - Mover para wordpress para dentro da pasta htdocs
 
-2) Preparando a instalação
+**2) Preparando a instalação**
   - Criar base de dados
   - Criar usuário
 <img width="989" height="150" alt="Acesso PHPMyAdmin" src="https://github.com/user-attachments/assets/07450e85-48b2-4b90-83d4-110f05ab608b" />
@@ -46,7 +46,7 @@
 <img width="754" height="497" alt="Criação do usuário" src="https://github.com/user-attachments/assets/9db91167-a17a-42a8-a7dc-6556ab3f2995" />
 <img width="897" height="1023" alt="Permissão de acesso do usuário" src="https://github.com/user-attachments/assets/4be83abb-7297-4625-836f-ea2ab745ff1a" />
 
-3) Acessar página de instalação
+**3) Acessar página de instalação**
   - http://localhost:8080/wordpress
   - Seguir processo de instalação
 <img width="1173" height="784" alt="Página inicial da instalação do WordPress" src="https://github.com/user-attachments/assets/e6de3f87-882a-4c90-85d2-4672006fe99d" />
