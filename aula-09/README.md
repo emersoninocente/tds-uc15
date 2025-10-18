@@ -37,10 +37,14 @@
   - Acesso o link https://wordpress.org/download/
   - Descompactar arquivo
   - Mover para wordpress para dentro da pasta htdocs
+
 2) Preparando a instalação
   - Criar base de dados
   - Criar usuário
 <img width="989" height="150" alt="Acesso PHPMyAdmin" src="https://github.com/user-attachments/assets/07450e85-48b2-4b90-83d4-110f05ab608b" />
+<img width="857" height="324" alt="Criação da base de dados" src="https://github.com/user-attachments/assets/9ed9dadc-418e-4661-9b50-01deee6a6ed5" />
+<img width="754" height="497" alt="Criação do usuário" src="https://github.com/user-attachments/assets/9db91167-a17a-42a8-a7dc-6556ab3f2995" />
+<img width="897" height="1023" alt="Permissão de acesso do usuário" src="https://github.com/user-attachments/assets/4be83abb-7297-4625-836f-ea2ab745ff1a" />
 
 3) Acessar página de instalação
   - http://localhost:8080/wordpress
