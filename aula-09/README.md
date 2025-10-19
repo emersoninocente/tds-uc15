@@ -56,6 +56,13 @@
 <img width="774" height="915" alt="Criar conta inicial de acesso ao WP" src="https://github.com/user-attachments/assets/681750a3-a86c-409c-bcee-4574b19dab93" />
 <img width="788" height="448" alt="Final da instalação" src="https://github.com/user-attachments/assets/cfeb0588-742d-493e-bd19-bd854412040b" />
 
+---
+## Exercícios:
+1) O WorkPress vem com 3 temas instalados:
+   - Identifique os 3 temas instalados
+   - Analise cada um dos temas se são **responsivos** ou **mobile first**
+Envie sua análise por e-mail para o professor (emerson.senac.gravatai@gmail.com) com assunto **TDS-M1-UC15 WP 01**.
+
 
 
 
