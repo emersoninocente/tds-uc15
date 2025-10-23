@@ -3,7 +3,6 @@
 ## Objetivos
 - Navegar pelos principais menus administrativos do WordPress
 - Criar uma página simples
-- Publicar a página criada
 - Identificar o processo de implementação de novos temas
 - Identificar o processo de implementação de novos plugins
 
@@ -82,8 +81,29 @@ http://localhost/seusite/wp-admin/
 ---
 ## Criar uma página
 
----
-## Publicar a página criada
+*Características:**
+- Conteúdo atemporal
+- Hierarquia (página pai/filha)
+- Sem categorias/tags
+- Sem data de publicação
+
+**Quando usar:**
+- Sobre
+- Contato
+- Serviços
+- Política de Privacidade
+- Qualquer conteúdo fixo
+
+**Criar Page:**
+```
+1. Pages → Add New
+2. Título: "Sobre"
+3. Conteúdo: [escreva aqui]
+4. Parent: (none) ou página pai
+5. Template: Default Template
+6. Featured Image: [opcional]
+7. Publish
+```
 
 ---
 ## Identificar o processo de implementação de novos temas
