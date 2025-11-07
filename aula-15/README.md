@@ -135,44 +135,28 @@ function custom_post_type_portifolio() {
 <img width="1384" height="364" alt="image" src="https://github.com/user-attachments/assets/e5b9cad1-e847-4355-9759-2535980846d0" />
 
 
-
-```
-═══════════════════════════════════════════════════════
-PASSO 4: VERIFICAR NO ADMIN
-═══════════════════════════════════════════════════════
-
-1. Ir para o Dashboard do WordPress
-
+#### Passo 3: Verificar no ADMIN
+> 1. Ir para o Dashboard do WordPress
 2. Procurar no menu lateral: "Portfolio"
-
 3. Deve aparecer com ícone de portfólio
-
-4. Clicar em "Adicionar Novo"
-
+4. Clicar em "Adicionar Novo Projeto"
 5. Interface deve ser igual a criar post
 
 ✅ Se apareceu, CPT está registrado corretamente!
-```
 
-```
-═══════════════════════════════════════════════════════
-PASSO 5: CRIAR PRIMEIRO PROJETO DE TESTE
-═══════════════════════════════════════════════════════
 
-1. Portfolio → Adicionar Novo
-
-2. Título: "Site Responsivo Mobile First"
-
-3. Conteúdo: Descrição do projeto
-
-4. Featured Image: Upload imagem
-
-5. Publicar
-
-6. Ver no frontend: seusite.com/portfolio/site-responsivo-mobile-first/
+#### Passo 4: CRIAR PRIMEIRO PROJETO DE TESTE
+> 1. Portfolio → Adicionar Novo Projeto
+  2. Título: "Site Responsivo Mobile First"
+  3. Conteúdo: Descrição do projeto
+  4. Featured Image: Upload imagem
+  5. Publicar
+  6. Ver no frontend: seusite.com/portfolio/site-responsivo-mobile-first/
 
 ✅ Projeto individual deve aparecer
-```
+
+
+---
 
 ### 2.2 Roteiro: Criar Template para Single Portfolio
 
