@@ -1,4 +1,4 @@
-Aula 15: Customização de Temas II
+# Aula 15: Customização de Temas II
 
 **Carga Horária:** 4 horas  
 **Objetivo:** Avançar na customização de temas WordPress criando Custom Post Types, Custom Taxonomies e Custom Fields, sempre com foco Mobile First.
@@ -72,22 +72,23 @@ register_post_type( 'portfolio', array(
 
 **EXEMPLO COMPLETO - PASSO A PASSO:**
 
-```php
-═══════════════════════════════════════════════════════
-PASSO 1: ADICIONAR AO FUNCTIONS.PHP DO CHILD THEME
-═══════════════════════════════════════════════════════
+#### Pass 1: Criar Plugin para p WordPress
 
-/**
- * Register Portfolio Custom Post Type
- * Mobile First: otimizado para exibição em dispositivos móveis
+```php
+<?php
+/*
+ * Plugin Name: Custom Post Types Portfolio
+ * Description: Add post types for custom projects
+ * Author: Prof. Emerson Inocente
  */
-function astra_child_portfolio_cpt() {
-    
+
+add_action( 'init', 'twentytwentyfive_child_portfolio_cpt' );
+
+function twentytwentyfive_child_portfolio_cpt() {  
     // Labels (textos da interface)
     $labels = array(
         'name'                  => 'Portfolio',
         'singular_name'         => 'Projeto',
-        'menu_name'             => 'Portfolio',
         'add_new'               => 'Adicionar Novo',
         'add_new_item'          => 'Adicionar Novo Projeto',
         'edit_item'             => 'Editar Projeto',
@@ -107,12 +108,6 @@ function astra_child_portfolio_cpt() {
     $args = array(
         'labels'              => $labels,
         'public'              => true,
-        'publicly_queryable'  => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'show_in_rest'        => true, // ✅ Gutenberg support
         'menu_position'       => 5,
         'menu_icon'           => 'dashicons-portfolio',
         'capability_type'     => 'post',
@@ -125,19 +120,17 @@ function astra_child_portfolio_cpt() {
             'custom-fields',   // Campos personalizados
         ),
         'has_archive'         => true,
-        'rewrite'             => array( 
-            'slug' => 'portfolio',
-            'with_front' => false 
-        ),
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => true,
     );
     
     // Registrar CPT
     register_post_type( 'portfolio', $args );
 }
-add_action( 'init', 'astra_child_portfolio_cpt' );
-
-✅ SALVAR e ir para próximo passo
 ```
+✅ SALVAR e ir para próximo passo
+
 
 ```php
 ═══════════════════════════════════════════════════════
