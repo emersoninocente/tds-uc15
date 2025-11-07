@@ -80,9 +80,9 @@ register_post_type( 'portfolio', array(
  * Author: Prof. Emerson Inocente
  */
 
-add_action( 'init', 'custom-post-type-portifolio' );
+add_action( 'init', 'custom_post_type_portifolio' );
 
-function custom-post-type-portifolio() {  
+function custom_post_type_portifolio() {  
     // Labels (textos da interface)
     $labels = array(
         'name'                  => 'Portfolio',
