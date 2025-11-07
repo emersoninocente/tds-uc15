@@ -68,12 +68,10 @@ register_post_type( 'portfolio', array(
 
 ## 2. Criando Custom Post Type - Portfolio (40 min)
 
-### 2.1 Roteiro: Registrar CPT Portfolio
+### 2.1 Roteiro: Registrar Plugin CPT Portfolio
 
-**EXEMPLO COMPLETO - PASSO A PASSO:**
-
-#### Pass 1: Criar Plugin para p WordPress
-
+#### Passo 1: Criar Plugin para o WordPress
+> Arquivo deve ser salvo em `wordpres\wp-content\plugins` com o nome `custom-post-type-portifolio.php`
 ```php
 <?php
 /*
@@ -82,9 +80,9 @@ register_post_type( 'portfolio', array(
  * Author: Prof. Emerson Inocente
  */
 
-add_action( 'init', 'twentytwentyfive_child_portfolio_cpt' );
+add_action( 'init', 'custom-post-type-portifolio' );
 
-function twentytwentyfive_child_portfolio_cpt() {  
+function custom-post-type-portifolio() {  
     // Labels (textos da interface)
     $labels = array(
         'name'                  => 'Portfolio',
