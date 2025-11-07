@@ -1,4 +1,4 @@
-# Encontro 17: Customização de Temas II
+Aula 15: Customização de Temas II
 
 **Carga Horária:** 4 horas  
 **Objetivo:** Avançar na customização de temas WordPress criando Custom Post Types, Custom Taxonomies e Custom Fields, sempre com foco Mobile First.
