@@ -129,51 +129,12 @@ function custom-post-type-portifolio() {
 ```
 ✅ SALVAR e ir para próximo passo
 
+#### Passo 2: Ativar o plugin recentemente criado
+> Retornar ao painel administrativo do WP e acessar o menu `Plugins`, deve constar na lista nosso plugin. Clicar no botão "Ativar".
 
-```php
-═══════════════════════════════════════════════════════
-PASSO 2: ADICIONAR TAMANHOS DE IMAGEM MOBILE FIRST
-═══════════════════════════════════════════════════════
+<img width="1384" height="364" alt="image" src="https://github.com/user-attachments/assets/e5b9cad1-e847-4355-9759-2535980846d0" />
 
-/**
- * Add custom image sizes for portfolio
- * Mobile First: diferentes tamanhos por dispositivo
- */
-function astra_child_portfolio_images() {
-    
-    // Mobile (até 767px)
-    add_image_size( 'portfolio-mobile', 600, 400, true );
-    
-    // Tablet (768px - 1023px)
-    add_image_size( 'portfolio-tablet', 900, 600, true );
-    
-    // Desktop (1024px+)
-    add_image_size( 'portfolio-desktop', 1200, 800, true );
-    
-    // Thumbnail do grid
-    add_image_size( 'portfolio-thumb', 400, 300, true );
-}
-add_action( 'after_setup_theme', 'astra_child_portfolio_images' );
 
-✅ SALVAR
-```
-
-```
-═══════════════════════════════════════════════════════
-PASSO 3: FLUSH REWRITE RULES (Uma vez apenas!)
-═══════════════════════════════════════════════════════
-
-1. Ir para: Settings → Permalinks
-
-2. Apenas clicar em "Save Changes" (não mudar nada)
-
-3. Isso recria as URLs do WordPress
-
-⚠️ IMPORTANTE: Fazer isso SEMPRE que criar novo CPT!
-Sem isso, URLs do portfolio darão erro 404.
-
-✅ Pronto! CPT criado e funcionando
-```
 
 ```
 ═══════════════════════════════════════════════════════
