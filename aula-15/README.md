@@ -68,14 +68,17 @@ register_post_type( 'portfolio', array(
 
 ## 2. Criando Custom Post Type - Portfolio (40 min)
 
-### 2.1 Roteiro: Registrar Plugin CPT Portfolio
+### 2.1 Roteiro: Criar tema filho
+> Executar procedimento da aula anterior.
 
-#### Passo 1: Criar Plugin para o WordPress
-> Arquivo deve ser salvo em `wordpres\wp-content\plugins` com o nome `custom-post-type-portifolio.php`
+### 2.2 Roteiro: Editar functions.php e style.css
+
+#### Passo 1: Editar functions.php
+> Editar o arquivo `functions.php` do tema filho para inserir o CPT, basta adicionar o código abaixo ao conteúdo já existente.\
+
 ```php
-<?php
 /*
- * Plugin Name: Custom Post Types Portfolio
+ * Custom Post Types Portfolio
  * Description: Add post types for custom projects
  * Author: Prof. Emerson Inocente
  */
@@ -129,44 +132,236 @@ function custom_post_type_portifolio() {
 ```
 ✅ SALVAR e ir para próximo passo
 
-#### Passo 2: Ativar o plugin recentemente criado
-> Retornar ao painel administrativo do WP e acessar o menu `Plugins`, deve constar na lista nosso plugin. Clicar no botão "Ativar".
+#### Passo 2: Editar style.css
+> Vamos adicionar os estilos necessários ao CPT. Copie e cole a código abaixo no final do arquiv `style.css` existente dentro do tema.
 
-<img width="1384" height="364" alt="image" src="https://github.com/user-attachments/assets/e5b9cad1-e847-4355-9759-2535980846d0" />
+```css
+/* ===================================================================
+   PORTFOLIO ARCHIVE - MOBILE FIRST
+   =================================================================== */
 
+/* MOBILE (< 768px) - 1 coluna */
+.portfolio-archive {
+  padding: 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.archive-description {
+  color: var(--text-light);
+}
+
+/* Grid Mobile - 1 coluna */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Item do Portfolio */
+.portfolio-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Thumbnail com overlay */
+.portfolio-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-thumbnail img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.view-project {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+/* Conteúdo */
+.portfolio-content {
+  padding: 1.5rem;
+}
+
+.portfolio-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Paginação Mobile */
+.portfolio-pagination {
+  margin-top: 2rem;
+}
+
+.portfolio-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.portfolio-pagination .page-numbers.current {
+  background: var(--primary);
+  color: white;
+}
+
+/* TABLET (768px+) - 2 colunas */
+@media (min-width: 768px) {
+  .portfolio-archive {
+    padding: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .portfolio-thumbnail img {
+    height: 280px;
+  }
+  
+  /* Hover effects apenas em dispositivos com hover */
+  @media (hover: hover) {
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .portfolio-item:hover .portfolio-thumbnail img {
+      transform: scale(1.05);
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+/* DESKTOP (1024px+) - 3 colunas */
+@media (min-width: 1024px) {
+  .portfolio-archive {
+    padding: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    font-size: 3rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .portfolio-thumbnail img {
+    height: 300px;
+  }
+}
+
+.portfolio-type {
+  margin-bottom: 1.5rem;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (hover: hover) {
+  .type-badge:hover {
+    opacity: 0.9;
+  }
+}
+```
+✅ SALVAR e flush permalinks (Settings → Permalinks → Save)
 
 #### Passo 3: Verificar no ADMIN
 > 1. Ir para o Dashboard do WordPress
-2. Procurar no menu lateral: "Portfolio"
-3. Deve aparecer com ícone de portfólio
-4. Clicar em "Adicionar Novo Projeto"
-5. Interface deve ser igual a criar post
+> 2. Procurar no menu lateral: "Portfolio"
+> 3. Deve aparecer com ícone de portfólio
+> 4. Clicar em "Adicionar Novo Projeto"
+> 5. Interface deve ser igual a criar post
 
 ✅ Se apareceu, CPT está registrado corretamente!
 
-
 #### Passo 4: CRIAR PRIMEIRO PROJETO DE TESTE
 > 1. Portfolio → Adicionar Novo Projeto
-  2. Título: "Site Responsivo Mobile First"
-  3. Conteúdo: Descrição do projeto
-  4. Featured Image: Upload imagem
-  5. Publicar
-  6. Ver no frontend: seusite.com/portfolio/site-responsivo-mobile-first/
+> 2. Título: "Site Responsivo Mobile First"
+> 3. Imagem do Projeto: Upload imagem
+> 5. Publicar
+> 6. Ver no frontend: seusite.com/?portfolio=site-responsivo-mobile-first
 
 ✅ Projeto individual deve aparecer
 
 
----
-
 ### 2.2 Roteiro: Criar Template para Single Portfolio
+> Vamos criar o modelo para os projetos. Criar arquivo: `/astra-child/single-portfolio.php`
 
 ```php
-═══════════════════════════════════════════════════════
-CRIAR TEMPLATE: single-portfolio.php
-═══════════════════════════════════════════════════════
-
-Criar arquivo: /astra-child/single-portfolio.php
-
 <?php
 /**
  * Template for single portfolio item
@@ -236,11 +431,9 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-```css
-═══════════════════════════════════════════════════════
-CSS PARA single-portfolio.php (adicionar ao style.css)
-═══════════════════════════════════════════════════════
+> Vamos editar o `style.css` e adicionar o código abaixo.
 
+```css
 /* ===================================================================
    SINGLE PORTFOLIO - MOBILE FIRST
    =================================================================== */
@@ -354,14 +547,9 @@ CSS PARA single-portfolio.php (adicionar ao style.css)
 ```
 
 ### 2.3 Roteiro: Criar Archive Template (Listagem)
+> Vamos criar o template para os arquivos do projeto. Criar arquivo: `/astra-child/archive-portfolio.php`
 
 ```php
-═══════════════════════════════════════════════════════
-CRIAR TEMPLATE: archive-portfolio.php
-═══════════════════════════════════════════════════════
-
-Criar arquivo: /astra-child/archive-portfolio.php
-
 <?php
 /**
  * Archive template for portfolio
@@ -438,12 +626,9 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 ```
+> Editar o `style.css` adicionando o código abaixo: 
 
 ```css
-═══════════════════════════════════════════════════════
-CSS PARA archive-portfolio.php (adicionar ao style.css)
-═══════════════════════════════════════════════════════
-
 /* ===================================================================
    PORTFOLIO ARCHIVE - MOBILE FIRST
    =================================================================== */
@@ -646,11 +831,10 @@ Receitas → "Categoria" (Doces, Salgados, Bebidas)
 
 ### 3.2 Roteiro: Criar Taxonomy para Portfolio
 
-```php
-═══════════════════════════════════════════════════════
-ADICIONAR AO FUNCTIONS.PHP
-═══════════════════════════════════════════════════════
+#### Passo 1: Editar o functions.php
+> Adicione ao final do arquivo.
 
+```php
 /**
  * Register Portfolio Taxonomy
  * Tipo de Projeto: Web, App, Branding, etc.
@@ -689,9 +873,9 @@ function astra_child_portfolio_taxonomy() {
     register_taxonomy( 'tipo_projeto', 'portfolio', $args );
 }
 add_action( 'init', 'astra_child_portfolio_taxonomy' );
+```
 
 ✅ SALVAR e flush permalinks (Settings → Permalinks → Save)
-```
 
 ```
 ═══════════════════════════════════════════════════════
@@ -711,7 +895,7 @@ USAR A TAXONOMY
    - Marcar categoria apropriada
 
 4. Frontend:
-   - seusite.com/tipo-projeto/web-design/
+   - seusite.com/?tipo-projeto=web-design
    - Lista todos projetos daquele tipo
 
 ✅ Taxonomy funcionando!
@@ -719,13 +903,13 @@ USAR A TAXONOMY
 
 ### 3.3 Exibir Taxonomy no Template
 
-```php
 ═══════════════════════════════════════════════════════
 MODIFICAR single-portfolio.php
 ═══════════════════════════════════════════════════════
 
 Adicionar APÓS o título:
 
+```php
 <!-- Tipo de Projeto -->
 <?php 
 $terms = get_the_terms( get_the_ID(), 'tipo_projeto' );
@@ -741,11 +925,11 @@ if ( $terms && ! is_wp_error( $terms ) ) :
 <?php endif; ?>
 ```
 
-```css
 ═══════════════════════════════════════════════════════
 CSS PARA BADGES (adicionar ao style.css)
 ═══════════════════════════════════════════════════════
 
+```css
 .portfolio-type {
   margin-bottom: 1.5rem;
 }
@@ -797,6 +981,7 @@ INSTALAR ACF PLUGIN
 ═══════════════════════════════════════════════════════
 PASSO 1: CRIAR FIELD GROUP
 ═══════════════════════════════════════════════════════
+Para que possamos fazer o processo de criação dos campos, precisamos voltar ao tema pai e ativá-lo.
 
 1. ACF → Field Groups → Add New
 
@@ -849,17 +1034,7 @@ React
 PHP
 Outras
 
-CAMPO 5: Galeria de Imagens
-─────────────────
-Field Label: Galeria de Imagens
-Field Name: galeria
-Field Type: Gallery
-Return Format: Array
-Insert: Append to end
-Library: All
-Min/Max: deixar vazio
-
-✅ Campos criados!
+✅ Campos criados! Podemos agora retornar ao tema filho.
 ```
 
 ```
@@ -901,14 +1076,13 @@ PASSO 4: TESTAR OS CAMPOS
 ```
 
 ### 4.3 Exibir Custom Fields no Template
-
-```php
 ═══════════════════════════════════════════════════════
 MODIFICAR single-portfolio.php
 ═══════════════════════════════════════════════════════
 
 Adicionar APÓS .entry-content:
 
+```php
 <!-- Informações do Projeto -->
 <div class="project-info">
     <h3>Informações do Projeto</h3>
@@ -981,12 +1155,11 @@ if ( $galeria ) :
     </div>
 <?php endif; ?>
 ```
-
-```css
 ═══════════════════════════════════════════════════════
 CSS PARA CUSTOM FIELDS (adicionar ao style.css)
 ═══════════════════════════════════════════════════════
 
+```css
 /* ===================================================================
    PROJECT INFO - MOBILE FIRST
    =================================================================== */
