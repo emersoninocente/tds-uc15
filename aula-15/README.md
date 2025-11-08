@@ -903,9 +903,9 @@ USAR A TAXONOMY
 
 ### 3.3 Exibir Taxonomy no Template
 
-═══════════════════════════════════════════════════════
-MODIFICAR single-portfolio.php
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════\
+MODIFICAR single-portfolio.php\
+═══════════════════════════════════════════════════════\
 
 Adicionar APÓS o título:
 
@@ -925,9 +925,9 @@ if ( $terms && ! is_wp_error( $terms ) ) :
 <?php endif; ?>
 ```
 
-═══════════════════════════════════════════════════════
-CSS PARA BADGES (adicionar ao style.css)
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════\
+CSS PARA BADGES (adicionar ao style.css)\
+═══════════════════════════════════════════════════════\
 
 ```css
 .portfolio-type {
@@ -1076,9 +1076,9 @@ PASSO 4: TESTAR OS CAMPOS
 ```
 
 ### 4.3 Exibir Custom Fields no Template
-═══════════════════════════════════════════════════════
-MODIFICAR single-portfolio.php
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════\
+MODIFICAR single-portfolio.php\
+═══════════════════════════════════════════════════════\
 
 Adicionar APÓS .entry-content:
 
@@ -1155,9 +1155,9 @@ if ( $galeria ) :
     </div>
 <?php endif; ?>
 ```
-═══════════════════════════════════════════════════════
-CSS PARA CUSTOM FIELDS (adicionar ao style.css)
-═══════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════\
+CSS PARA CUSTOM FIELDS (adicionar ao style.css)\
+═══════════════════════════════════════════════════════\
 
 ```css
 /* ===================================================================
@@ -1301,35 +1301,54 @@ PARTE 1: REGISTRAR CPT DEPOIMENTOS (10 min)
 
 Adicionar ao functions.php:
 
-/**
- * Register Testimonials CPT
+/*
+ * Custom Post Types Portfolio
+ * Description: Add post types for custom projects
+ * Author: Prof. Emerson Inocente
  */
-function astra_child_testimonials_cpt() {
-    
-    $labels = array(
-        'name'               => 'Depoimentos',
-        'singular_name'      => 'Depoimento',
-        'add_new'            => 'Adicionar Novo',
-        'add_new_item'       => 'Adicionar Novo Depoimento',
-        'edit_item'          => 'Editar Depoimento',
-        'view_item'          => 'Ver Depoimento',
-        'search_items'       => 'Buscar Depoimentos',
-        'not_found'          => 'Nenhum depoimento encontrado',
-    );
-    
-    $args = array(
-        'labels'        => $labels,
-        'public'        => true,
-        'has_archive'   => true,
-        'show_in_rest'  => true,
-        'menu_icon'     => 'dashicons-testimonial',
-        'supports'      => array( 'title', 'editor', 'thumbnail' ),
-        'rewrite'       => array( 'slug' => 'depoimentos' ),
-    );
-    
-    register_post_type( 'depoimento', $args );
-}
+
 add_action( 'init', 'astra_child_testimonials_cpt' );
+
+function astra_child_testimonials_cpt() {  
+    // Labels (textos da interface)
+    $labels = array(
+        'name'                  => 'Depoimentos',
+        'singular_name'         => 'Depoimento',
+        'menu_name'             => 'Depoimentos',
+        'name_admin_bar'        => 'Depoimento',
+        'add_new'               => 'Adicionar Novo',
+        'add_new_item'          => 'Adicionar Novo Depoimento',
+        'new_item'              => 'Novo Depoimento',
+        'edit_item'             => 'Editar Depoimento',
+        'view_item'             => 'Ver Depoimento',
+        'all_items'             => 'Todos os Depoimentos',
+        'search_items'          => 'Buscar Depoimentos',
+        'not_found'             => 'Nenhum depoimento encontrado',
+        'not_found_in_trash'    => 'Nenhum depoimento na lixeira',
+    );
+    
+    // Argumentos
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'menu_position'       => 6,
+        'menu_icon'           => 'dashicons-testimonial',
+        'capability_type'     => 'post',
+        'hierarchical'        => false,
+        'supports'            => array( 
+            'title',           // Título
+            'editor',          // Editor de conteúdo
+            'thumbnail',       // Imagem destacada
+        ),
+        'has_archive'         => true,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => true,
+    );
+    
+    // Registrar CPT
+    register_post_type('depoimento', $args );
+}
 
 ☐ SALVAR
 ☐ Settings → Permalinks → Save
