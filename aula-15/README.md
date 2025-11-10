@@ -1417,7 +1417,7 @@ Preview Size: Thumbnail
 PARTE 3: CRIAR TEMPLATE (10 min)
 ═══════════════════════════════════════════════════════
 
-Criar arquivo: /astra-child/archive-depoimento.php
+Criar arquivo: /astra-child/single-depoimento.php
 
 <?php
 /**
@@ -1431,15 +1431,10 @@ get_header(); ?>
     <header class="page-header">
         <h1>O Que Dizem Nossos Clientes</h1>
     </header>
-    
     <?php if ( have_posts() ) : ?>
-        
-        <div class="testimonials-grid">
-            
+        <div>
             <?php while ( have_posts() ) : the_post(); ?>
-                
-                <article class="testimonial-card">
-                    
+                <article>
                     <!-- Rating -->
                     <?php 
                     $rating = get_field( 'rating' );
@@ -1478,16 +1473,11 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
                     </div>
-                    
                 </article>
-                
             <?php endwhile; ?>
-            
         </div>
-        
     <?php endif; ?>
 </div>
-
 <?php get_footer(); ?>
 ```
 
@@ -1502,6 +1492,7 @@ Adicionar ao style.css:
 
 /* MOBILE */
 .testimonials-archive {
+  margin-top: 6rem;
   padding: 1rem;
 }
 
