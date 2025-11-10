@@ -383,3 +383,88 @@ get_header(); ?>
 
 ### Criar os campos customizados
 > Para este procedimento usaremos um plugin chamado **ACF** (Advanced Custom Fields).
+
+```
+═══════════════════════════════════════════════════════
+INSTALAR ACF PLUGIN
+═══════════════════════════════════════════════════════
+
+1. Plugins → Add New
+
+2. Buscar: "Advanced Custom Fields"
+
+3. Install + Activate "Advanced Custom Fields"
+
+4. Menu lateral: ACF aparece
+
+✅ Plugin instalado!
+```
+
+### 4.2 Roteiro: Criar Campos para Portfolio
+
+```
+═══════════════════════════════════════════════════════
+PASSO 1: CRIAR FIELD GROUP
+═══════════════════════════════════════════════════════
+Para que possamos fazer o processo de criação dos campos, precisamos voltar ao tema pai e ativá-lo.
+
+1. ACF → Field Groups → Add New
+
+2. Título: "Portfolio Details"
+
+3. Clicar em "+ Add Field"
+```
+
+```
+═══════════════════════════════════════════════════════
+PASSO 2: ADICIONAR CAMPOS
+═══════════════════════════════════════════════════════
+
+CAMPO 1: Cliente
+─────────────────
+Field Label: Cliente
+Field Name: cliente
+Field Type: Text
+Instructions: Nome do cliente do projeto
+Required: Sim
+
+CAMPO 2: Data do Projeto
+─────────────────
+Field Label: Data do Projeto
+Field Name: data_projeto
+Field Type: Date Picker
+Display Format: d/m/Y
+Return Format: Y-m-d
+Required: Não
+
+CAMPO 3: Tecnologias Utilizadas
+─────────────────
+Field Label: Tecnologias
+Field Name: tecnologias
+Field Type: Checkbox
+Choices:
+HTML5
+CSS3
+JavaScript
+WordPress
+React
+PHP
+Outras
+
+✅ Campos criados! Podemos agora retornar ao tema filho.
+```
+
+```
+═══════════════════════════════════════════════════════
+PASSO 3: DEFINIR LOCALIZAÇÃO
+═══════════════════════════════════════════════════════
+
+1. Na seção "Location Rules":
+
+2. Configurar:
+   Post Type | is equal to | portfolio
+
+3. Isso mostra os campos apenas em Portfolio
+
+✅ PUBLISH para salvar
+```
