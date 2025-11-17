@@ -10,15 +10,15 @@
 1) Uso de tema customizado à escolha do aluno (download em wordpress.org)
 2) Criação de 5 páginas completas:\
    a) Home\
-      Página principal, deve conter uma imagem e texto em conceito Hero;\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página principal, deve conter uma imagem e texto em conceito Hero;\
    b) Produto\
-      Página modelada em duas colunas, em cada coluna tratar de um produto ou serviço da empresa contendo uma imagem e descrição do produto/serviço;\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página modelada em duas colunas, em cada coluna tratar de um produto ou serviço da empresa contendo uma imagem e descrição do produto/serviço;\
    c) Sobre\
-      Página falando da empresa, página livre criação;\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página falando da empresa, página livre criação;\
    d) Contato\
-      Página informativa dos canais de contato da empresa: endereço, telefone, mídias sociais;\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página informativa dos canais de contato da empresa: endereço, telefone, mídias sociais;\
    e) Dicas\
-      Página em formato blog onde podem ocorrer postagens e comentários (função básica do WordPress). Criar um post com 3 comentários.\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página em formato blog onde podem ocorrer postagens e comentários (função básica do WordPress). Criar um post com 3 comentários.\
 
 ### Avaliação:
 1) Implementação do WordPress
